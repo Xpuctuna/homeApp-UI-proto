@@ -5,8 +5,8 @@ div.container {
 
 header, footer {
     padding: 1em;
-    color: #00CED1;
-    background-color: #FFF5EE;
+    color: #a484b0;
+    background-color: #ffeaf5;
     clear: left;
     text-align: center;
 }
@@ -17,18 +17,25 @@ nav {
     height: 600px;
     margin: 0;
     padding: 1em;
-    background-color: #FFF5EE;
-    color: #20B2AA;
+    background-color: #ffeaf5;
+    color: #c17892;
 }
 
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    font-size: 20px;
 }
    
 nav ul a {
     text-decoration: none;
+}
+
+nav ul li p span {
+    text-decoration: bolder;
+    color: #c17892;
+
 }
 
 article {
