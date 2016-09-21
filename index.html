@@ -7,7 +7,6 @@
   	<div class="container">
 </head>
 <body>
-  <!--<div class="container">-->
 
     <header>
       <h1>Welcome to our home!</h1>
@@ -16,6 +15,10 @@
   <nav>
     <ul>
       <li><p id ="date"></p></li>
+      <li><p>City: <span id="city"></span></p></li>
+      <li><p>Temperature: <span id="temp"></span>&#8451;</p></li>
+      <li><p>Humidity: <span id="humidity"></span>%</p></li>
+      <li><p>Pressure: <span id="pressure"></span>hpa</p></li>
     </ul>
   </nav>
 
@@ -27,7 +30,18 @@
 
 <script>
 	document.getElementById("date").innerHTML = Date();
-
+	$( document ).ready(function() {
+	  $.ajax({
+	    dataType: "json",
+	    url: "http://api.openweathermap.org/data/2.5/weather?id=702550&units=metric&APPID=5c453812b8dc6bffc8238edeb5df71e6",
+	    success: function(result){
+	      document.getElementById("city").innerHTML = result.name;
+	      document.getElementById("temp").innerHTML = result.main.temp;
+	      document.getElementById("humidity").innerHTML = result.main.humidity;
+	      document.getElementById("pressure").innerHTML = result.main.pressure;
+	    }
+	  });
+	});
 </script>
 
 <footer>Copyright Bodnar 2016</footer>
